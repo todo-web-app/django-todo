@@ -34,3 +34,9 @@ def edit(request, todo_id):
         form = TodoLisForm(instance=todo)
     return render(request, 'todolist/add.html', {'form': form}) 
 
+
+def delete(request, todo_id):
+    todo = TodoList.objects.get(pk=todo_id)
+    todo.delete()
+    return redirect('todolist:index')
+

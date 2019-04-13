@@ -17,6 +17,9 @@
                     <a href="{% url 'todolist:edit' todo_id=todo.id %}">{{ todo.description }}</a>
                 </td>
                 <td>{{ todo.done }}</td>
+                <td>
+                    <a href="{% url 'todolist:delete' todo_id=todo.id %}">Delete</a>
+                </td>
             </tr>
         {% endfor %}
     </table>
