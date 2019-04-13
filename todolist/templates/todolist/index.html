@@ -1,8 +1,7 @@
 {% extends 'todolist/base.html' %}
 
 {% block content %}
-    <h1>Todo List</h1>
-    <a href="{% url 'todolist:add' %}">Add</a>
+    <h1>To-do List</h1>
     <table border="1">
         <tr>
             <th>
@@ -14,7 +13,9 @@
         </tr>
         {% for todo in todos %}
             <tr>
-                <td>{{ todo.description }}</td>
+                <td>
+                    <a href="{% url 'todolist:edit' todo_id=todo.id %}">{{ todo.description }}</a>
+                </td>
                 <td>{{ todo.done }}</td>
             </tr>
         {% endfor %}

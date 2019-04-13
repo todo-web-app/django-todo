@@ -19,3 +19,18 @@ def add(request):
     else:
         form = TodoLisForm()
     return render(request, 'todolist/add.html', {'form': form})
+
+
+def edit(request, todo_id):
+    todo = TodoList.objects.get(pk=todo_id)
+
+    if request.method == 'POST':
+        form = TodoLisForm(request.POST, instance=todo)
+
+        if form.is_valid():
+            form.save()
+            return redirect('todolist:index')
+    else:
+        form = TodoLisForm(instance=todo)
+    return render(request, 'todolist/add.html', {'form': form}) 
+

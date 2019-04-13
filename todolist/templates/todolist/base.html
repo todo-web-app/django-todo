@@ -7,6 +7,16 @@
     <title>TodoList</title>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li>
+                <a href="{% url 'todolist:index' %}">List</a>
+            </li>
+            <li>
+                <a href="{% url 'todolist:add' %}">Add</a>
+            </li>
+        </ul>
+    </nav>
     <div>
         {% block content %}
         {% endblock %}
