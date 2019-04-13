@@ -1,0 +1,29 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    color: white;
+    background-color: lightgreen;
+}
+
+.container {
+    background-color: green;
+}
+
+.nav {
+    background-color: blue;
+}
+
+a {
+    color: rgb(151, 22, 22);
+}
+
+h1 {
+    color: black;
+    text-align: center;
+}
+
+table {
+    margin-top: 10px;
+}

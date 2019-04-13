@@ -40,3 +40,10 @@ def delete(request, todo_id):
     todo.delete()
     return redirect('todolist:index')
 
+
+def done(request, todo_id):
+    todo = TodoList.objects.get(pk=todo_id)
+    # toggle
+    todo.done = not todo.done
+    todo.save()
+    return redirect('todolist:index')
