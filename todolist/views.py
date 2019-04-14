@@ -5,8 +5,9 @@ from .forms import TodoLisForm
 
 
 def index(request):
+    form = TodoLisForm()
     todos = TodoList.objects.all()
-    return render(request, 'todolist/index.html', {'todos': todos})
+    return render(request, 'todolist/index.html', {'todos': todos, 'form': form})
 
 
 def add(request):

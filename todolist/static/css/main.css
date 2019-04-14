@@ -2,17 +2,13 @@ html {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
+/* body {
     color: white;
     background-color: lightgreen;
-}
+} */
 
 .container {
-    background-color: green;
-}
-
-.nav {
-    background-color: blue;
+    /* background-color: green; */
 }
 
 a {

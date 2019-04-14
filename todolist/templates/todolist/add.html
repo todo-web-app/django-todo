@@ -4,7 +4,7 @@
     <a class="btn btn-primary" href="{% url 'todolist:index' %}">List</a>
     <div>
         {{ form.non_field_errors }}
-        <form>
+        <form method="POST">
             {% csrf_token %}
             <div class="form-group">
                 {{ form.description.errors }}

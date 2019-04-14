@@ -1,39 +1,31 @@
 {% extends 'todolist/base.html' %}
 
 {% block content %}
-    <a class="btn btn-primary" href="{% url 'todolist:add' %}">Add</a>
-    <table class="table table-hover">
-        <tr>
-            <th>
-                Description
-            </th>
-            <th>
-                Done?
-            </th>
-            <th>
-                Action
-            </th>
-        </tr>
-        {% for todo in todos %}
-            <tr>
-                <td>
-                    <a href="{% url 'todolist:edit' todo_id=todo.id %}">{{ todo.description }}</a>
-                </td>
-                <td>
-                    <a href="{% url 'todolist:done' todo_id=todo.id %}">
-                        {% if todo.done %}
-                            <i class="fas fa-check-circle"></i>
-                        {% else %}
-                            <i class="fas fa-times-circle"></i>
-                        {% endif %}
-                    </a>
-                </td>
-                <td>
-                    <a href="{% url 'todolist:delete' todo_id=todo.id %}">
-                        <i class="fas fa-times-circle"></i>
-                    </a>
-                </td>
-            </tr>
-        {% endfor %}
-    </table>
+<table class="table table-hover">
+    {% for todo in todos %}
+    <tr>
+        <td>
+            <a href="{% url 'todolist:edit' todo_id=todo.id %}">{{ todo.description }}</a>
+        </td>
+        <td>
+            <a href="{% url 'todolist:done' todo_id=todo.id %}">
+                {% if todo.done %}
+                <i class="fas fa-check-circle"></i>
+                {% else %}
+                <i class="fas fa-times-circle"></i>
+                {% endif %}
+            </a>
+        </td>
+        <td>
+            <a href="{% url 'todolist:delete' todo_id=todo.id %}">
+                <i class="fas fa-trash"></i>
+            </a>
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td>Empty</td>
+    </tr>
+    {% endfor %}
+</table>
 {% endblock %}
