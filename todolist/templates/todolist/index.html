@@ -5,7 +5,7 @@
     {% for todo in todos %}
     <tr>
         <td>
-            <a href="{% url 'todolist:edit' todo_id=todo.id %}">{{ todo.description }}</a>
+            <a href="{% url 'todolist:edit' todo_id=todo.id %}">{{ todo.title }}</a>
         </td>
         <td>
             <a href="{% url 'todolist:done' todo_id=todo.id %}">
