@@ -3,17 +3,17 @@
 {% block content %}
 <ul class="list-group">
     {% for todo in todos %}
-    <li class="list-group-item">
-        {{ todo.title }}
+    <li class="list-group-item {% if todo.done %}done{% endif %}">
         <a href="{% url 'todolist:done' todo_id=todo.id %}">
             {% if todo.done %}
-            <i class="fas fa-check-circle"></i>
+            <del>{{ todo.title }}</del>
             {% else %}
-            <i class="fas fa-times-circle"></i>
+            {{ todo.title }}
             {% endif %}
         </a>
+
         <a href="{% url 'todolist:delete' todo_id=todo.id %}">
-            <i class="fas fa-trash"></i>
+            <i class="fas fa-trash float-right"></i>
         </a>
     </li>
     {% empty %}
