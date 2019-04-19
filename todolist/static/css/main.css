@@ -6,16 +6,16 @@ a {
     color: rgb(151, 22, 22);
 }
 
-table {
-    margin-top: 10px;
-}
-
 .form-control, .btn {
     border-radius: 0%;
 }
 
 .form-control {
     width: 100% !important;
+}
+
+.form-group {
+    padding: 0 0;
 }
 
 /* Style the header */
@@ -25,3 +25,30 @@ table {
     color: white;
     text-align: center;
   }
+
+/* Darker background-color on hover */
+ul li:hover {
+    background: #ddd;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+    background: #f9f9f9;
+
+}
+
+/* Style the list items */
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+  
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

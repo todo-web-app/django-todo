@@ -1,31 +1,25 @@
 {% extends 'todolist/base.html' %}
 
 {% block content %}
-<table class="table table-hover">
+<ul class="list-group">
     {% for todo in todos %}
-    <tr>
-        <td>
-            <a href="{% url 'todolist:edit' todo_id=todo.id %}">{{ todo.title }}</a>
-        </td>
-        <td>
-            <a href="{% url 'todolist:done' todo_id=todo.id %}">
-                {% if todo.done %}
-                <i class="fas fa-check-circle"></i>
-                {% else %}
-                <i class="fas fa-times-circle"></i>
-                {% endif %}
-            </a>
-        </td>
-        <td>
-            <a href="{% url 'todolist:delete' todo_id=todo.id %}">
-                <i class="fas fa-trash"></i>
-            </a>
-        </td>
-    </tr>
+    <li class="list-group-item">
+        {{ todo.title }}
+        <a href="{% url 'todolist:done' todo_id=todo.id %}">
+            {% if todo.done %}
+            <i class="fas fa-check-circle"></i>
+            {% else %}
+            <i class="fas fa-times-circle"></i>
+            {% endif %}
+        </a>
+        <a href="{% url 'todolist:delete' todo_id=todo.id %}">
+            <i class="fas fa-trash"></i>
+        </a>
+    </li>
     {% empty %}
-    <tr>
-        <td>Empty</td>
-    </tr>
+    <li>
+        Empty
+    </li>
     {% endfor %}
-</table>
+</ul>
 {% endblock %}
