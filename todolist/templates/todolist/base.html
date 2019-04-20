@@ -13,7 +13,7 @@
     <title>Todos</title>
 </head>
 <body>
-    <div class="container">
+    <div>
         <div class="header">
             <h2>My To Do List</h2>
             {{ form.non_field_errors }}
@@ -26,6 +26,7 @@
                 <button type="submit" class="btn btn-primary col-lg-2">Add</button>
             </form>
         </div>
+        
         {% block content %}
         {% endblock %}
     </div>
