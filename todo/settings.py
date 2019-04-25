@@ -24,7 +24,7 @@ SECRET_KEY = '%m(&mo#q)_*i(+k0$-ua++^+a^1*gk(d*_7=tmy$yz@5ps^a&o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.179.3', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['192.168.179.6', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -127,7 +127,7 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'todolist/static/js', 'serviceworker.js')
 PWA_APP_ICONS = [
     {
-        'src': '/static/icon/todoapp.png',
-        'sizes': '128x128'
+        'src': '/static/images/todoapp.png',
+        'sizes': '160x160'
     }
 ]
