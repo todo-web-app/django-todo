@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import reverse
 
 
 class TodoList(models.Model):
@@ -8,3 +9,8 @@ class TodoList(models.Model):
 
     def __str__(self):
         return self.title
+
+    @property
+    def done_link(self):
+        return reverse('todolist:done', self.id)
+        

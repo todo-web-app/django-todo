@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.core import serializers
+from django.http import HttpResponse
 
 from .models import TodoList
 from .forms import TodoLisForm
@@ -34,3 +36,14 @@ def done(request, todo_id):
     todo.done = not todo.done
     todo.save()
     return redirect('todolist:index')
+
+
+def base_layout(request):
+    form = TodoLisForm()
+    return render(request, 'todolist/index.html', {'form': form})
+
+
+def getdata(request):
+    results = TodoList.objects.all()
+    jsondata = serializers.serialize('json',results)
+    return HttpResponse(jsondata)
