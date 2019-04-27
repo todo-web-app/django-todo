@@ -64,17 +64,3 @@ dbPromise.then(function(db){
     }
     return cursor.continue().then(logItems);
 });
-
-    // <li class="list-group-item {% if todo.done %}done{% endif %}">
-    //     <a href="{% url 'todolist:done' todo_id=todo.id %}">
-    //         {% if todo.done %}
-    //             <del>{{ todo.title }}</del>
-    //         {% else %}
-    //             {{ todo.title }}
-    //         {% endif %}
-    //     </a>
-
-    //     <a href="{% url 'todolist:delete' todo_id=todo.id %}">
-    //         <i class="fas fa-trash float-right"></i>
-    //     </a>
-    // </li>
