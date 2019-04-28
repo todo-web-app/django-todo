@@ -34,6 +34,10 @@ dbPromise.then(function(db){
     }
 
     for (var field in cursor.value) {
+        if (field=='pk') {
+            var todoId = cursor.value[field]
+        }
+
         if(field=='fields'){
             todosData=cursor.value[field];
             console.log(todosData);
@@ -43,10 +47,19 @@ dbPromise.then(function(db){
                 }
                 if(key =='done'){
                     var done = todosData[key];
-                    console.log(done);
+                }
+                if(key =='title'){
+                    var title = todosData[key];
                 }
             }
-            todos = todos+'<li class="list-group-item">'+title+'</li>';
+
+            if (done) {
+                var todoLink = '<a href="done/' + todoId + '"><del>' + title + '</del></a>'
+                todos = todos + '<li class="list-group-item done">' + todoLink + '<a href="delete/' +  todoId +'"><i class="fas fa-trash float-right"></i></a></li>';
+            } else {
+                var todoLink = '<a href="done/' + todoId + '">' + title + '</a>'
+                todos = todos + '<li class="list-group-item">' + todoLink + '<a href="delete/' +  todoId +'"><i class="fas fa-trash float-right"></i></a></li>';
+            }
         }
     }
     return cursor.continue().then(logItems);
