@@ -124,8 +124,6 @@ STATIC_URL = '/static/'
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
-PWA_APP_NAME = 'Todoit!'
-PWA_APP_DESCRIPTION = "Just do what is in the list."
 PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'todolist/static/js', 'serviceworker.js')
 PWA_APP_ICONS = [
     {
