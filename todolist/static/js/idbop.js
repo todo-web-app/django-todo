@@ -21,47 +21,23 @@ fetch('/getdata').then(function(response){
 var todos = "";
 dbPromise.then(function(db){
     var tx = db.transaction('todos', 'readonly');
-    var todosStore = tx.objectStore('todos');
-    return todosStore.openCursor();
+    var feedsStore = tx.objectStore('todos');
+    return feedsStore.openCursor();
 }).then(function logItems(cursor) {
-    if (!cursor && todos != "") {
+        if (!cursor) {
         document.getElementById('todos').innerHTML=todos;
         return;
-    }
-
-    if (!cursor) {
-        return;
-    }
-
-    for (var field in cursor.value) {
-        if(field=='fields'){
-            todosData=cursor.value[field];
-            console.log(todosData);
-            for(var key in todosData){
-                if(key =='title'){
-                    var title = todosData[key];
-                }
-                if(key =='done'){
-                    var done = todosData[key];
-                    console.log(done);
-                }
-            }
-            todos = todos+'<li class="list-group-item">'+title+'</li>';
         }
-    }
-    return cursor.continue().then(logItems);
-});
-
-    // <li class="list-group-item {% if todo.done %}done{% endif %}">
-    //     <a href="{% url 'todolist:done' todo_id=todo.id %}">
-    //         {% if todo.done %}
-    //             <del>{{ todo.title }}</del>
-    //         {% else %}
-    //             {{ todo.title }}
-    //         {% endif %}
-    //     </a>
-
-    //     <a href="{% url 'todolist:delete' todo_id=todo.id %}">
-    //         <i class="fas fa-trash float-right"></i>
-    //     </a>
-    // </li>
+        for (var field in cursor.value) {
+            if(field=='fields'){
+                feedsData=cursor.value[field];
+                for(var key in feedsData){
+                    if(key =='title'){
+                        var title = feedsData[key];
+                    }
+                }
+                todos = todos+'<li class="list-group-item">'+title+'</li>';
+            }
+        }
+        return cursor.continue().then(logItems);
+    });
