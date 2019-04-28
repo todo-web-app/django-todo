@@ -1,7 +1,7 @@
 {% extends 'todolist/base.html' %}
 
 {% block content %}
-<ul class="list-group" id="todos">
+<ul class="list-group">
     {% for todo in todos %}
     <li class="list-group-item {% if todo.done %}done{% endif %}">
         <a href="{% url 'todolist:done' todo_id=todo.id %}">
@@ -17,8 +17,8 @@
         </a>
     </li>
     {% empty %}
-    <li class="list-group-item">
-        Nothing To-do, do something!
+    <li>
+        Empty
     </li>
     {% endfor %}
 </ul>

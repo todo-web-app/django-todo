@@ -10,8 +10,6 @@ pep8 = "*"
 [packages]
 django = "*"
 django-widget-tweaks = "*"
-install = "*"
-django-progressive-web-app = "*"
 
 [scripts]
 server = "python manage.py runserver"
