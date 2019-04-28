@@ -3,7 +3,7 @@ var dbPromise = idb.open('todo-db', 1, function(upgradeDb) {
 });
 
 //collect latest post from server and store in idb
-fetch('/getdata').then(function(response){
+fetch('http://127.0.0.1:8000/getdata').then(function(response){
     return response.json();
 }).then(function(jsondata){
     dbPromise.then(function(db){
@@ -31,12 +31,14 @@ dbPromise.then(function(db){
         for (var field in cursor.value) {
             if(field=='fields'){
                 feedsData=cursor.value[field];
+                console.log(feedsData);
                 for(var key in feedsData){
                     if(key =='title'){
                         var title = feedsData[key];
                     }
                 }
                 todos = todos+'<li class="list-group-item">'+title+'</li>';
+                console.log(todos);
             }
         }
         return cursor.continue().then(logItems);
