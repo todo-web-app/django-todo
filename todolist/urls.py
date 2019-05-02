@@ -9,5 +9,5 @@ urlpatterns = [
     path('delete/<int:todo_id>', views.delete, name='delete'),
     path('done/<int:todo_id>', views.done, name='done'),
     path('base_layout', views.base_layout, name='base'),
-    path('getdata', views.getdata, name='getdata'),
+    path('get_data', views.getdata, name='get_data'),
 ]
