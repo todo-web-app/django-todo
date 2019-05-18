@@ -13,4 +13,3 @@ class TodoList(models.Model):
     @property
     def done_link(self):
         return reverse('todolist:done', self.id)
-        
