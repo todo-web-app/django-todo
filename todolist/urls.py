@@ -8,6 +8,4 @@ urlpatterns = [
     path('add/', views.add, name='add'),
     path('delete/<int:todo_id>', views.delete, name='delete'),
     path('done/<int:todo_id>', views.done, name='done'),
-    path('base_layout', views.base_layout, name='base'),
-    path('getdata', views.getdata, name='getdata'),
 ]
