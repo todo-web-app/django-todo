@@ -11,6 +11,7 @@ pep8 = "*"
 django = "*"
 django-widget-tweaks = "*"
 install = "*"
+django-environ = "*"
 
 [scripts]
 server = "python manage.py runserver"
