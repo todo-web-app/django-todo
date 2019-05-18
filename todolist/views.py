@@ -45,5 +45,5 @@ def base_layout(request):
 
 def getdata(request):
     results = TodoList.objects.all()
-    jsondata = serializers.serialize('json',results)
+    jsondata = serializers.serialize('json', results)
     return HttpResponse(jsondata)
