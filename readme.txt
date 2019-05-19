@@ -13,3 +13,6 @@ https://brew.sh/
 
 Development environment using pyenv and pipenv in mac os:
 https://hackernoon.com/reaching-python-development-nirvana-bb5692adf30c
+
+Django free hosting:
+https://www.pythonanywhere.com/details/django_hosting
