@@ -10,7 +10,6 @@ pep8 = "*"
 [packages]
 django = "*"
 django-widget-tweaks = "*"
-install = "*"
 django-environ = "*"
 
 [scripts]
