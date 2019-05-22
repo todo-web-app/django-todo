@@ -16,3 +16,6 @@ https://hackernoon.com/reaching-python-development-nirvana-bb5692adf30c
 
 Django free hosting:
 https://www.pythonanywhere.com/details/django_hosting
+
+Setting for different environment:
+https://simpleisbetterthancomplex.com/2015/11/26/package-of-the-week-python-decouple.html
