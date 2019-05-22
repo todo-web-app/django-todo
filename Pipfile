@@ -10,7 +10,7 @@ pep8 = "*"
 [packages]
 django = "*"
 django-widget-tweaks = "*"
-django-environ = "*"
+python-decouple = "*"
 
 [scripts]
 server = "python manage.py runserver"
