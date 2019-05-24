@@ -1,19 +1,32 @@
 {% extends 'todolist/base.html' %}
+{% load widget_tweaks %}
 
 {% block content %}
+<div>
+    {{ form.non_field_errors }}
+    <form method="POST" action="{% url 'todolist:add' %}">
+        {% csrf_token %}
+        <div>
+            {{ form.title.errors }}
+            {{ form.title|add_class:"form-control"|attr:"placeholder:I will do..." }}
+        </div>
+    </form>
+</div>
+
 <ul class="list-group" id="todos">
+
     {% for todo in todos %}
     <li class="list-group-item {% if todo.done %}done{% endif %}">
         <a href="{% url 'todolist:done' todo_id=todo.id %}">
             {% if todo.done %}
-                <del>{{ todo.title }}</del>
+            <del>{{ todo.title }}</del>
             {% else %}
-                {{ todo.title }}
+            {{ todo.title }}
             {% endif %}
         </a>
 
         <a href="{% url 'todolist:delete' todo_id=todo.id %}">
-            <i class="fas fa-trash float-right"></i>
+            <i class="fas fa-eraser float-right"></i>
         </a>
     </li>
     {% empty %}
