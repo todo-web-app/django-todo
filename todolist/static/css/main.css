@@ -42,11 +42,12 @@ a {
 }
 
 i {
-    color: #007bff;
+    
+    color: #93999e;
 }
 
 i:hover {
-    color: black;
+    color: #3c3e3f;
 }
 
 .list-group-item:first-child {
@@ -56,4 +57,12 @@ i:hover {
 .list-group-item:last-child {
     margin-bottom: 0;
     border-radius: 0;
+}
+
+#id_title {
+    opacity: 0.5;
+}
+
+h2 {
+    margin-bottom: 0;
 }
