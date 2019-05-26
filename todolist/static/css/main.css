@@ -16,29 +16,13 @@ a {
     color: unset;
 }
 
-.form-control, .btn {
-    border-radius: 0%;
-}
-
-.form-control {
-    width: 100% !important;
-}
-
-.form-group {
-    padding: 0 0;
-}
-
 .header {
-    padding: 30px 40px;
+    padding: 20px;
     text-align: center;
 }
 
 #todos li {
     background-color: rgba(0, 0, 0, 0);
-}
-
-.done {
-    background: #8B9DB6;
 }
 
 i {

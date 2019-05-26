@@ -12,6 +12,7 @@ django = "*"
 django-widget-tweaks = "*"
 python-decouple = "*"
 mysqlclient = "*"
+python-dotenv = "*"
 
 [scripts]
 server = "python manage.py runserver"
