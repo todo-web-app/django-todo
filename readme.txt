@@ -19,3 +19,6 @@ https://www.pythonanywhere.com/details/django_hosting
 
 Setting for different environment:
 https://simpleisbetterthancomplex.com/2015/11/26/package-of-the-week-python-decouple.html
+
+Demo:
+https://bryan.pythonanywhere.com/
